@@ -1,8 +1,14 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
+import { useUserContext } from './Logic/UserContextProvider';
 
 export default function Body({ children }) {
+  const { ClearAll, removeAllCompleted } = useUserContext();
+  const clearAll = () => {
+    ClearAll();
+    removeAllCompleted();
+  };
   return (
     <div className="body">
       <div className="section">
@@ -12,7 +18,7 @@ export default function Body({ children }) {
         </span>
       </div>
       {children}
-      <button type="button" className=".clear-all" value="Clear all completed">
+      <button type="button" onClick={() => clearAll()} className=".clear-all" value="Clear all completed">
         Clear all completed
       </button>
     </div>
