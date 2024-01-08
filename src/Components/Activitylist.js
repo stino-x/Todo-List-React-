@@ -27,6 +27,7 @@ export default function Activitylist() {
 
   const deleteTask = (todoId, todoIndex) => {
     removeTodo(todoId, todoIndex);
+    setEditingItemId(null);
   };
   return (
     <ul id="activity-list">
@@ -36,7 +37,7 @@ export default function Activitylist() {
           // Render the edit form when editingItemId matches the item's index
           // console.log(todo.id),
           // console.log(todo.index),
-            <span className="activity">
+            <span className="activity edit-span">
               <input
                 type="text"
                 className="input-edit"

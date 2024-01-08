@@ -44,6 +44,7 @@ div {
   float: right;
   margin-right: 5%;
   cursor: pointer;
+  flex: 1;
 }
 
 #refresh {
@@ -53,12 +54,13 @@ div {
   cursor: pointer;
 }
 
-.trash {
-  position: absolute;
-  left: 56vw;
-  right: 44vw;
+/* .trash {
+  position: relative;
+  justify-self: end;
+  left: 95%;
   cursor: pointer;
-}
+  z-index: 5;
+} */
 
 *:focus {
   outline: none;
@@ -85,10 +87,6 @@ div {
   background-color: white;
 }
 
-.td {
-  padding-left: 5%;
-}
-
 a {
   text-decoration: none;
   text-align: center;
@@ -108,6 +106,7 @@ input[type=checkbox] {
 input[type="text"] {
   min-height: 100%;
   margin-left: 3%;
+  flex: 1;
 }
 
 input[type="text"]::placeholder {
@@ -143,14 +142,6 @@ input[type="text"]::placeholder {
   width: 100%;
 }
 
-.input-edit {
-  position: relative;
-  width: 80%;
-  border: none;
-  background-color: rgba(255, 253, 208, 1);
-  left: 8%;
-}
-
 .completed {
   text-decoration: line-through;
 }
@@ -176,4 +167,41 @@ button {
 
 .edit {
   background-color: rgba(255, 253, 208, 1);
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.activity {
+  flex: 1;
+}
+
+.td {
+  padding-left: 5%;
+  display: flex;
+}
+
+.listitem {
+  display: flex;
+}
+
+.edit-span {
+  display: flex;
+  flex: 1;
+}
+
+box-icon {
+  position: relative;
+  left: 20%;
+  cursor: pointer;
+  z-index: 5;
+  flex: 0.5;
+}
+
+.input-edit {
+  position: relative;
+  max-width: 50%;
+  border: none;
+  background-color: rgba(255, 253, 208, 1);
+  left: 3%;
 }
